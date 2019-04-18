@@ -10,7 +10,7 @@ A typical use of filters is to reduce [alert fatigue][2].  One of the most typic
   "api_version": "core/v2",
   "metadata": {
     "name": "hourly",
-    "namespace": "AWS"
+    "namespace": "default"
   },
   "spec": {
     "action": "allow",
@@ -22,15 +22,15 @@ A typical use of filters is to reduce [alert fatigue][2].  One of the most typic
 }
 ```
 
-However, the use of the filter above creates some limitations.  Suppose you have a check that you want to change to only alert after three (3) occurrences.  Typically that might mean creating another handler and filter pair to assign to that check.  If you have to do this often enough and you start to have an unwieldy mass of handlers and filters.
+However, the use of the filter above creates some limitations.  Suppose you have one check in particular that you want to change to only alert after three (3) occurrences.  Typically that might mean creating another handler and filter pair to assign to that check.  If you have to do this often enough and you start to have an unwieldy mass of handlers and filters.
 
-That's where this Fatigue Check Filter comes in.  It makes use of annotations within a check to allow you to fine tune your event pipeline.
+That's where this Fatigue Check Filter comes in.  Using annotations, it makes the number of occurrences and the interval tunable on a per-check basis.  It also allows you to control whether or not resolution events are passed through.
 
 ## Installation
 
-TBD
+You can create your own [asset][3] by creating a tar file containing `lib/fatigue_check.js` and creating your asset definition accordingly.
 
-Create releases?  Bonsai?
+Future:  releases on [Bonsai][4]
 
 ## Configuration
 
@@ -110,7 +110,7 @@ Check:
   "api_version": "core/v2",
   "metadata": {
     "name": "linux-cpu-check",
-    "namespace": "AWS",
+    "namespace": "default",
     "annotations": {
       "fatigue_check/occurrences": "3",
       "fatigue_check/interval": "900",
@@ -146,3 +146,5 @@ Check:
 
 [1]: https://docs.sensu.io/sensu-go/latest/reference/filters/
 [2]: https://docs.sensu.io/sensu-go/latest/guides/reduce-alert-fatigue/
+[3]: https://docs.sensu.io/sensu-go/latest/reference/assets/
+[4]: https://bonsai.sensu.io/
