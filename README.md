@@ -38,14 +38,12 @@ The Fatigue Check Filter makes use of three annotations within a check's metadat
 
 |Annotation|Default|Usage|
 |----------|-------|-----|
-|fatigue_check/occurrences*|1|On which occurrence to allow the initial event to pass through|
+|fatigue_check/occurrences|1|On which occurrence to allow the initial event to pass through|
 |fatigue_check/interval|1800|In seconds, at what interval to allow subsequent events to pass through|
 |fatigue_check/allow_resolution|true|Determines whether or not a resolution event is passed through|
 
-**Note:**  This filter reviews the available event history when checking if the event had breached
-the configured occurrences for determining whether or not to allow the resolution event to pass.
-Since the event history only contains 21 occurrences, the max for our check will be 20.  Setting
-this variable higher would cause it to never allow the resolution event to pass.
+**Note:**  This filter makes use of the occurrences_watermark attribute that was buggy up until
+Sensu Go 5.9.
 
 #### Definition Examples
 Asset:
