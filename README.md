@@ -28,13 +28,13 @@ That's where this Fatigue Check Filter comes in.  Using annotations, it makes th
 
 ## Installation
 
-You can create your own [asset][3] by creating a tar file containing `lib/fatigue_check.js` and creating your asset definition accordingly.
+Use asset from [Bonsai][4]
 
-Future:  releases on [Bonsai][4]
+You can create your own [asset][3] by creating a tar file containing `lib/fatigue_check.js` and creating your asset definition accordingly.
 
 ## Configuration
 
-The Fatigue Check Filter makes use of three annotations within a check's metadata.
+The Fatigue Check Filter makes use of four annotations within a check's metadata.
 
 |Annotation|Default|Usage|
 |----------|-------|-----|

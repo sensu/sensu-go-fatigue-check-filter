@@ -7,6 +7,11 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.2] - 2019-06-18
+
+### Changed
+- Fixed README for Bonsai
+
 ## [0.1.0] - 2019-06-18
 
 ### Changed
