@@ -1,0 +1,7 @@
+---
+description: "#{repo}"
+builds:
+- platform: "any"
+  arch: "noarch"
+  asset_filename: "#{repo}_#{version}.tar.gz"
+  sha_filename: "#{repo}_#{version}_sha512-checksums.txt"
