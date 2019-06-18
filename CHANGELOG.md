@@ -7,5 +7,11 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.0] - 2019-06-18
+
 ### Changed
 - Updated to use occurrences_watermark
+
+### Added
+- Suppression of flapping events
+
