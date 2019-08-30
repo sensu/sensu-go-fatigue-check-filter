@@ -39,13 +39,13 @@ The Fatigue Check Filter makes use of four annotations within a check's metadata
 |Annotation|Default|Usage|
 |----------|-------|-----|
 |fatigue_check/occurrences|1|On which occurrence to allow the initial event to pass through|
-|fatigue_check/interval|1800|In seconds, at what interval to allow subsequent events to pass through|
+|fatigue_check/interval|1800|In seconds, at what interval to allow subsequent events to pass through, ideally a multiple of the check interval|
 |fatigue_check/allow_resolution|true|Determines whether or not a resolution event is passed through|
 |fatigue_check/suppress_flapping|true|Determines whether or not to suppress events for checks that are marked as flapping|
 
 **Notes:**
 * This filter makes use of the occurrences_watermark attribute that was buggy up until Sensu Go 5.9.  Your mileage may vary on prior versions.
-* The interval must be a multiple of the check's interval.
+* If the interval is not a multiple of the check's interval, then the actual interval is computed by rounding up the result of dividing the interval by the check's interval.  For example, an interval of 180s with a check interval of 25s would pass the event through on every 8 occurrences (200s).
 
 #### Definition Examples
 Asset:
