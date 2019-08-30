@@ -7,6 +7,11 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0] - 2019-08-30
+
+### Changed
+- Rounding the interval/check interval up just in case it's not a multiple
+
 ## [0.1.3] - 2019-06-18
 
 ### Changed
