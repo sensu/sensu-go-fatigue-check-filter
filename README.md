@@ -119,7 +119,7 @@ Check:
       "fatigue_check/occurrences": "3",
       "fatigue_check/interval": "900",
       "fatigue_check/allow_resolution": "false"
-    },
+    }
   },
   "spec": {
     "command": "check-cpu -w 90 c 95",
