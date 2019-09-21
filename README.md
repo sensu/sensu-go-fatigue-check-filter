@@ -28,7 +28,7 @@ That's where this Fatigue Check Filter comes in.  Using annotations, it makes th
 
 ## Installation
 
-Use asset from [Bonsai][4]
+Use asset from [Bonsai][4] with `sensuctl asset add nixwiz/sensu-go-fatigue-check-filter --rename fatigue-check-filter`.  Please note this requires Sensu 5.13 or later.
 
 You can create your own [asset][3] by creating a tar file containing `lib/fatigue_check.js` and creating your asset definition accordingly.
 
@@ -48,7 +48,7 @@ The Fatigue Check Filter makes use of four annotations within a check's metadata
 * If the interval is not a multiple of the check's interval, then the actual interval is computed by rounding up the result of dividing the interval by the check's interval.  For example, an interval of 180s with a check interval of 25s would pass the event through on every 8 occurrences (200s).
 
 #### Definition Examples
-Asset:
+Asset (if not using `sensuctl asset add`):
 ```json
 {
   "type": "Asset",
