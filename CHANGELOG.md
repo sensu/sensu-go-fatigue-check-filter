@@ -7,6 +7,11 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.2] - 2019-09-21
+
+### Changed
+- README updated to include sensuctl asset add for bonsai
+
 ## [0.2.1] - 2019-09-04
 
 ### Changed
