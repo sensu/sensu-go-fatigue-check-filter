@@ -24,17 +24,17 @@ A typical use of filters is to reduce [alert fatigue][2].  One of the most typic
 
 However, the use of the filter above creates some limitations.  Suppose you have one check in particular that you want to change to only alert after three (3) occurrences.  Typically that might mean creating another handler and filter pair to assign to that check.  If you have to do this often enough and you start to have an unwieldy mass of handlers and filters.
 
-That's where this Fatigue Check Filter comes in.  Using annotations, it makes the number of occurrences and the interval tunable on a per-check basis.  It also allows you to control whether or not resolution events are passed through.
+That's where this Fatigue Check Filter comes in.  Using annotations, it makes the number of occurrences and the interval tunable on a per-check or per-entity basis.  It also allows you to control whether or not resolution events are passed through.
 
 ## Installation
 
-Use asset from [Bonsai][4] with `sensuctl asset add nixwiz/sensu-go-fatigue-check-filter --rename fatigue-check-filter`.  Please note this requires Sensu 5.13 or later.
+Use asset from [Bonsai][4] with `sensuctl asset add nixwiz/sensu-go-fatigue-check-filter --rename fatigue-check-filter`.  Please note this requires Sensu 5.13 or later.  Also note that the --rename is not necessary, but references to the runtime asset in the filter definition as in the example below would need to be updated to match. 
 
 You can create your own [asset][3] by creating a tar file containing `lib/fatigue_check.js` and creating your asset definition accordingly.
 
 ## Configuration
 
-The Fatigue Check Filter makes use of four annotations within a check's metadata.
+The Fatigue Check Filter makes use of four annotations within the check and/or entity metadata, with the entity annotations taking precedence.
 
 |Annotation|Default|Usage|
 |----------|-------|-----|
@@ -146,6 +146,28 @@ Check:
   }
 }
 
+```
+
+Entity (via the agent.yml):
+```
+---
+##
+# agent configuration
+##
+
+#name: ""
+
+#namespace: "default"
+
+#subscriptions: 
+#  - "localhost"
+
+annotations:
+  fatigue_check/occurrences: "3"
+  fatigue_check/interval: "900"
+  fatigue_check/allow_resolution: "false"
+
+[...]
 ```
 
 [1]: https://docs.sensu.io/sensu-go/latest/reference/filters/
