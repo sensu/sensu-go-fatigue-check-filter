@@ -7,6 +7,9 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+- Support for entity annotations
+
 ## [0.2.2] - 2019-09-21
 
 ### Changed
