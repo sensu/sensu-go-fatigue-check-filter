@@ -7,6 +7,9 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+- Fixed is_resolution checking
+
 ## [0.3.0] - 2019-11-27
 
 ### Added
