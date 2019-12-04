@@ -1,0 +1,25 @@
+{
+    "name": "sensu-go-fatigue-check-filter",
+    "version": "0.3.1",
+    "description": "Filter Sensu Go Events with an eye toward managing alert fatigue",
+    "main": "lib/fatigue_check.js",
+    "repository": "git@github.com:nixwiz/sensu-go-fatigue-check-filter.git",
+    "author": "Todd Campbell <todd@toddcampbell.net>",
+    "license": "MIT",
+    "directories": {
+        "lib": "lib",
+        "test": "spec"
+    },
+    "dependencies": {
+        "jasmine": "^3.4.0"
+    },
+    "devDependencies": {
+        "karma": "^4.1.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-cli": "^2.0.0",
+        "karma-jasmine": "^2.0.1"
+    },
+    "scripts": {
+        "test": "karma start karma.conf.js --single-run"
+    }
+}
