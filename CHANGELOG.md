@@ -7,6 +7,13 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+- Testing with Karma
+- Build and release scripts
+
+### Removed
+- Janky test script lib/fatigue_check_test.js
+
 ## [0.3.1] - 2019-12-03
 
 ### Changed
