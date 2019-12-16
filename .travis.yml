@@ -15,4 +15,11 @@ cache:
 script: node_modules/karma/bin/karma start karma.conf.js --log-level debug --single-run
 before_script:
     - npm install
+deploy:
+- provider: script
+  script: bin/build.sh
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
 
