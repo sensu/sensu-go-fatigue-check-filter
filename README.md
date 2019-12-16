@@ -1,4 +1,5 @@
 # sensu-go-fatigue-check-filter
+TravisCI: [![TravisCI Build Status](https://travis-ci.org/nixwiz/sensu-go-fatigue-check-filter.svg?branch=master)](https://travis-ci.org/nixwiz/sensu-go-fatigue-check-filter)
 
 The Sensu Go Fatigue Check Filter is a [Sensu Event Filter][1] for managing alert fatigue.
 
