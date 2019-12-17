@@ -14,7 +14,7 @@ cache:
   - node_modules
 script: node_modules/karma/bin/karma start karma.conf.js --log-level debug --single-run
 before_script:
-    - npm install
+- npm install
 deploy:
 - provider: script
   script: bin/build.sh
@@ -22,4 +22,6 @@ deploy:
   on:
     tags: true
     branch: master
-
+env:
+  global:
+    secure: r1zGq8yzeHBZ7WV+p+wyVlYJcCdPpl3DXrAl4xOBKb8MxLrPIMENfH5F20KpiHFWOUUlawniZwda0htbkqPWa4ODpMrabx61t3KaAWPtRJ9mPGLomv58hIT/GpT76k4WmO38Eo9XkmJe9f/r88Ah42AHPPt27kCQaj+5xnD5NG5Xvy1dAGRRAz69/Mc95U5IVP/7KzDOMLBmlXX/CDcOoVGo4FrZvPqI74KNo1JjrN1G3FwyzNeFrnvN53dVls/tXwoQlLPRSVPnMhiFj9m1bGmCYLvMbR4XYd32iVpqq3WgAkwW7HR2is9wkunsFYQaW0BZtAsfRplbmWNVbjOSqaPXd5KRrPQ0/ccbfAPxdevbhRePN32lDG/UsjUcH/UXpYvjrrI5jSb3eeaJOuLTEfygnJsqhE6bS4+MyPyEmeozGVgfZuSKecv/3RojN73akOIWu3RvAKdZ8660SUf1zyTGSXTQkhCCCfGM7rd2okcUKr9J8J9Ar6E5xPfzZZvpl8TWaR52a4CJxxRYa/T7COBcZ8KwprTEts1pAiMd8/tKXqAn0DKHRREMTtPcgTL28lKLI00C2tBY25FRr+IPuN1kvmIztXY+9b9HLISPON37iNNLGWHsGZzR9H92zwALi3TRxt3QVTp3IPBPgebKGyBy7tGBeiu96J/MUNCMJl8=
