@@ -1,5 +1,5 @@
 [![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/nixwiz/sensu-go-fatigue-check-filter)
-[ ![Build Status](https://travis-ci.org/nixwiz/sensu-go-fatigue-check-filter.svg?branch=master)](https://travis-ci.org/nixwiz/sensu-go-fatigue-check-filter)
+![Karma Test](https://github.com/nixwiz/sensu-go-fatigue-check-filter/workflows/Karma%20Test/badge.svg)
 
 ## Sensu Go Fatigue Check Filter
 
