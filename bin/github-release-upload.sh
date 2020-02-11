@@ -53,15 +53,11 @@ fi
 # Validate token.
 curl -o /dev/null -sH "$AUTH" "$GH_REPO" || { echo "Error: Invalid repo, token or network issue!";  exit 1; }
 
-# Read asset tags.
+# Read asset tags and get ID of the asset based on given filename.
 echo "curl -sH ${AUTH} ${GH_TAGS}"
-response=$(curl -sH "${AUTH}" "${GH_TAGS}")
-
-# Get ID of the asset based on given filename.
-unset id
-eval "$(echo "$response" | grep -m 1 "id.:" | grep -w id | tr : = | tr -cd '[[:alnum:]]=')"
-echo "$id"
-[ "$id" ] || { echo "Error: Failed to get release id for tag: $tag"; echo "$response" | awk 'length($0)<100' >&2; exit 1; }
+id=$(curl -sH "${AUTH}" "${GH_TAGS}" | jq -r '.id')
+echo "Release ID: $id"
+[ "$id" != "null" ] || { echo "Error: Failed to get release id for tag: $tag";  curl -sH "${AUTH}" "${GH_TAGS}" | jq . >&2; exit 1; }
 
 # Upload asset
 echo "Uploading asset... "
