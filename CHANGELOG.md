@@ -7,6 +7,8 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.0] - 2020-02-19
+
 ### Changed
 - Minor github upload script changes
 - Use bracket accessor syntax for annotations (@flowerysong)
