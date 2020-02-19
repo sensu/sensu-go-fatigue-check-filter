@@ -9,6 +9,7 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ### Changed
 - Minor github upload script changes
+- Use bracket accessor syntax for annotations (@flowerysong)
 
 ## [0.4.0] - 2020-02-10
 
