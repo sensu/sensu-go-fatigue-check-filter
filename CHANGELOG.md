@@ -7,6 +7,12 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.0] - 2020-05-08
+
+### Changed
+- Added default occurrences and interval as parameters to allow override(s)
+- Reorganized README, added above and switched examples to yaml
+
 ## [0.5.0] - 2020-02-19
 
 ### Changed
