@@ -13,7 +13,40 @@ jobs:
         uses: actions/checkout@v2
       - name: Unshallow
         run: git fetch --prune --unshallow
-      - name: Run Build
-        run: bin/build.sh
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      - name: Create tar file
+        run: tar czvf ${{ github.event.repository.name }}_${{ steps.get_version.outputs.VERSION }}.tar.gz lib README.md
+      - name: Create sha512sum file
+        run: sha512sum ${{ github.event.repository.name }}_${{ steps.get_version.outputs.VERSION }}.tar.gz > ${{ github.event.repository.name }}_${{ steps.get_version.outputs.VERSION }}_sha512-checksums.txt
+      - name: Upload Release tar file
+        id: upload-release-tar
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ github.event.repository.name }}_${{ steps.get_version.outputs.VERSION }}.tar.gz
+          asset_name: ${{ github.event.repository.name }}_${{ steps.get_version.outputs.VERSION }}.tar.gz
+          asset_content_type: application/gzip
+      - name: Upload Release sha512 checksum file
+        id: upload-release-sha512
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ github.event.repository.name }}_${{ steps.get_version.outputs.VERSION }}_sha512-checksums.txt
+          asset_name: ${{ github.event.repository.name }}_${{ steps.get_version.outputs.VERSION }}_sha512-checksums.txt
+          asset_content_type: text/plain

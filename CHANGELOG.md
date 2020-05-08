@@ -7,6 +7,11 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.1] - 2020-05-08
+
+### Changed
+- Fixed releast to use all github actions, no included scripts
+
 ## [0.6.0] - 2020-05-08
 
 ### Changed
