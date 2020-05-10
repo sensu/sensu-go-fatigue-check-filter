@@ -7,6 +7,11 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.2] - 2020-05-10
+
+### Changed
+- Updated parameter call for defaults, Otto doesn't support assigning default values in function definition
+
 ## [0.6.1] - 2020-05-08
 
 ### Changed
