@@ -1,0 +1,26 @@
+name: Otto Test
+
+on: [push]
+
+jobs:
+  test:
+    name: Test with Otto
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Go 1.13
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.13
+      id: go
+    - name: Get Otto
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        go get -v github.com/robertkrimen/otto/otto
+    - name: Test
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        cat lib/fatigue_check.js >> otto_tests/otto_tests.js
+        if otto otto_tests/otto_tests.js | grep FAILED; then false; else true; fi
+
