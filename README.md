@@ -188,7 +188,9 @@ annotations:
 Keepalives do not have check resources with annotations that can be used to tune
 this filter.  Using standard entity annotations would override the settings for
 **all** other checks.  To address this specific case, two additional tunables
-exist for customizing this filter for keepalive events.
+exist for customizing this filter for keepalive events.  These can be set as
+arguments to the `fatigue_check()` function in the filter definition or as
+entity annotations to override the defaults on a per entity basis.
 
 #### Annotations
 The Fatigue Check Filter makes use of six annotations within the check and/or
