@@ -302,10 +302,6 @@ spec:
 
 See the instructions above for [asset registration][6].
 
-### Sensu Core
-
-Install and setup plugins on [Sensu Core][5].
-
 ## Additional notes
 
 * This filter makes use of the occurrences_watermark attribute that was buggy
