@@ -7,6 +7,12 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+- Special case handling for keepalive checks
+
+### Changed
+- Reformatted and cleaned up README
+
 ## [0.6.2] - 2020-05-10
 
 ### Changed
