@@ -204,12 +204,18 @@ entity metadata, with the entity annotations taking precedence.
 |fatigue_check/suppress_flapping|true|Determines whether or not to suppress events for checks that are marked as flapping|
 
 #### Arguments
-The `fatigue_check()` function can take up to five arguments, the first one is
-the event and is required.  The remaining four are optional and allow you to
-override the built-in defaults for occurrences, interval, keepalive_occurrences,
-and keepalive_interval, respectively.  For example, if you'd like a version of
-the filter that, by default on non-keepalive checks, matches on the second
-occurrence instead of the first you could create a filter similar to below:
+The `fatigue_check()` function can take up to five arguments.
+
+```javascript
+fatigue_check(event, occurrences, interval, keepalive_occurrences, keepalive_interval)
+```
+
+The first one is the event and is required.  The remaining four are optional and
+allow you to override the built-in defaults for occurrences, interval,
+keepalive_occurrences, and keepalive_interval, respectively.  For example, if
+you'd like a version of the filter that, by default on non-keepalive checks,
+matches on the second occurrence instead of the first you could create a filter
+similar to below:
 
 ```yml
 ---
