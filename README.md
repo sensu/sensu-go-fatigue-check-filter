@@ -193,17 +193,19 @@ arguments to the `fatigue_check()` function in the filter definition or as
 entity annotations to override the defaults on a per entity basis.
 
 #### Annotations
-The Fatigue Check Filter makes use of six annotations within the check and/or
-entity metadata, with the entity annotations taking precedence.
+The Fatigue Check Filter makes use of four annotations within the check and/or
+entity metadata for normal checks with an additional two keepalive annotations
+availalbe in the entity metadata.  The entity annotations taking precedence over
+check annotations.
 
 |Annotation|Default|Usage|
 |----------|-------|-----|
 |fatigue_check/occurrences|1|On which occurrence to allow the initial event to pass through for normal checks|
 |fatigue_check/interval|1800|In seconds, at what interval to allow subsequent events to pass through, ideally a multiple of the check interval for normal checks|
-|fatigue_check/keepalive_occurrences|1|On which occurrence to allow the initial event to pass through for keepalives|
-|fatigue_check/keepalive_interval|1800|In seconds, at what interval to allow subsequent events to pass through, ideally a multiple of the check interval for keepalives|
 |fatigue_check/allow_resolution|true|Determines whether or not a resolution event is passed through|
 |fatigue_check/suppress_flapping|true|Determines whether or not to suppress events for checks that are marked as flapping|
+|fatigue_check/keepalive_occurrences|1|On which occurrence to allow the initial event to pass through for keepalives (**entity only**)|
+|fatigue_check/keepalive_interval|1800|In seconds, at what interval to allow subsequent events to pass through, ideally a multiple of the check interval for keepalives (**entity only**)|
 
 #### Arguments
 The `fatigue_check()` function can take up to five arguments.
