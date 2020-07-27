@@ -656,6 +656,229 @@ function test_case29() {
     }
 }
 
+function test_case30() {
+    var event = {
+      "entity": {
+	"annotations": {
+	  "fatigue_check/keepalive_occurrences": 2
+	}
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 2,
+	"occurrences_watermark": 2
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event);
+    if (result) {
+        console.log("#30 PASSED - returns true when the entity/keepalive_occurrences is matched for a keepalive");
+    } else {
+        console.log("#30 FAILED - returns true when the entity/keepalive_occurrences is matched for a keepalive");
+    }
+}
+
+function test_case31() {
+    var event = {
+      "entity": {
+	"annotations": {
+	  "fatigue_check/keepalive_occurrences": 3
+	}
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 2,
+	"occurrences_watermark": 2
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event);
+    if (result) {
+        console.log("#30 FAILED - returns false when the entity/keepalive_occurrences is not matched for a keepalive");
+    } else {
+        console.log("#30 PASSED - returns false when the entity/keepalive_occurrences is not matched for a keepalive");
+    }
+}
+
+function test_case32() {
+    var event = {
+      "entity": {
+	"annotations": {
+	  "fatigue_check/keepalive_occurrences": 3
+	  "fatigue_check/keepalive_interval": 600
+	}
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 20,
+	"occurrences_watermark": 20
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event);
+    if (result) {
+        console.log("#32 PASSED - returns true when the entity/keepalive_interval is matched for a keepalive");
+    } else {
+        console.log("#32 FAILED - returns true when the entity/keepalive_interval is matched for a keepalive");
+    }
+}
+
+function test_case33() {
+    var event = {
+      "entity": {
+	"annotations": {
+	  "fatigue_check/keepalive_occurrences": 3
+	  "fatigue_check/keepalive_interval": 600
+	}
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 19,
+	"occurrences_watermark": 19
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event);
+    if (result) {
+        console.log("#33 FAILED - returns false when the entity/keepalive_interval is not matched for a keepalive");
+    } else {
+        console.log("#33 PASSED - returns false when the entity/keepalive_interval is not matched for a keepalive");
+    }
+}
+
+function test_case34() {
+    var event = {
+      "entity": {
+	"namespace": 'default'
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 2,
+	"occurrences_watermark": 2
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 3, 600, 2, 300);
+    if (result) {
+        console.log("#34 PASSED - returns true when the keepalive_occurrences argument is matched for a keepalive");
+    } else {
+        console.log("#34 FAILED - returns true when the keepalive_occurrences argument is matched for a keepalive");
+    }
+}
+
+function test_case35() {
+    var event = {
+      "entity": {
+	"namespace": 'default'
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 2,
+	"occurrences_watermark": 2
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 2, 600, 3, 300);
+    if (result) {
+        console.log("#35 FAILED - returns false when the keepalive_occurrences argument is not matched for a keepalive");
+    } else {
+        console.log("#35 PASSED - returns false when the keepalive_occurrences argument is not matched for a keepalive");
+    }
+}
+
+function test_case36() {
+    var event = {
+      "entity": {
+	"namespace": 'default'
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 20,
+	"occurrences_watermark": 20
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 2, 300, 3, 600);
+    if (result) {
+        console.log("#36 PASSED - returns true when the keepalive_interval argument is matched for a keepalive");
+    } else {
+        console.log("#36 FAILED - returns true when the keepalive_interval argument is matched for a keepalive");
+    }
+}
+
+function test_case37() {
+    var event = {
+      "entity": {
+	"namespace": 'default'
+      },
+      "check": {
+	"interval": 30,
+	"occurrences": 19,
+	"occurrences_watermark": 19
+	"name": 'keepalive'
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 2, 600, 3, 300);
+    if (result) {
+        console.log("#37 FAILED - returns false when the keepalive_interval argument is not matched for a keepalive");
+    } else {
+        console.log("#37 PASSED - returns false when the keepalive_interval argument is not matched for a keepalive");
+    }
+}
+
+function test_case38() {
+    var event = {
+      "entity": {
+        "namespace": "default",
+        "annotations": {
+          "fatigue_check/interval": 0
+        }
+      },
+      "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 1, 1800);
+    if (result) {
+        console.log("#38 FAILED - returns false when the interval annotation is zero");
+    } else {
+        console.log("#38 PASSED - returns false when the interval annotation is zero");
+    }
+}
+
+function test_case39() {
+    var event = {
+      "entity": {
+        "namespace": "default",
+        "annotations": {
+          "fatigue_check/keepalive_interval": 0
+        }
+      },
+      "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 3, 60, 1, 60);
+    if (result) {
+        console.log("#39 FAILED - returns false when the keepalive interval annotation is zero");
+    } else {
+        console.log("#39 PASSED - returns false when the keepalive interval annotation is zero");
+    }
+}
 test_case1();
 test_case2();
 test_case3();
@@ -685,4 +908,14 @@ test_case26();
 test_case27();
 test_case28();
 test_case29();
+test_case30();
+test_case31();
+test_case32();
+test_case33();
+test_case34();
+test_case35();
+test_case36();
+test_case37();
+test_case38();
+test_case39();
 

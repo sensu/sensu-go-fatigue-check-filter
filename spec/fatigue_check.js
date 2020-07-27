@@ -504,4 +504,179 @@ describe("fatigue_check", function() {
       expect(fatigue_check(event)).toBe(false);
   });
 
+  it("returns true when the entity/keepalive_occurrences is matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "annotations": {
+            "fatigue_check/keepalive_occurrences": 2
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event)).toBe(true);
+  });
+
+  it("returns false when the entity/keepalive_occurrences is not matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "annotations": {
+            "fatigue_check/keepalive_occurrences": 3
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event)).toBe(false);
+  });
+
+  it("returns true when the entity/keepalive_interval is matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "annotations": {
+            "fatigue_check/keepalive_occurrences": 3,
+            "fatigue_check/keepalive_interval": 600
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 20,
+          "occurrences_watermark": 20,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event)).toBe(true);
+  });
+
+  it("returns false when the entity/keepalive_interval is not matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "annotations": {
+            "fatigue_check/keepalive_occurrences": 3,
+            "fatigue_check/keepalive_interval": 600
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 19,
+          "occurrences_watermark": 19,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event)).toBe(false);
+  });
+
+  it("returns true when the keepalive_occurrences argument is matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "namespace": "default"
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 3, 600, 2, 300)).toBe(true);
+  });
+
+  it("returns false when the keepalive_occurrences argument is not matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "namespace": "default"
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 2, 600, 3, 300)).toBe(false);
+  });
+
+  it("returns true when the keepalive_interval argument is matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "namespace": "default"
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 20,
+          "occurrences_watermark": 20,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 2, 300, 3, 600)).toBe(true);
+  });
+
+  it("returns false when the keepalive_interval argument is not matched for a keepalive", function() {
+      var event = {
+        "entity": {
+          "namespace": "default"
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 19,
+          "occurrences_watermark": 19,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 2, 600, 3, 300)).toBe(false);
+  });
+
+  it("returns false when the interval annotation is zero", function() {
+      var event = {
+        "entity": {
+          "namespace": "default",
+	  "annotations": {
+            "fatigue_check/interval": 0
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 1, 1800)).toBe(false);
+  });
+
+  it("returns false when the keepalive interval annotation is zero", function() {
+      var event = {
+        "entity": {
+          "namespace": "default",
+	  "annotations": {
+            "fatigue_check/keepalive_interval": 0
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 3, 60, 1, 60)).toBe(false);
+  });
+
 });
