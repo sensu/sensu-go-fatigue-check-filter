@@ -833,6 +833,52 @@ function test_case37() {
         console.log("#37 PASSED - returns false when the keepalive_interval argument is not matched for a keepalive");
     }
 }
+
+function test_case38() {
+    var event = {
+      "entity": {
+        "namespace": "default",
+        "annotations": {
+          "fatigue_check/interval": 0
+        }
+      },
+      "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 1, 1800);
+    if (result) {
+        console.log("#38 FAILED - returns false when the interval annotation is zero");
+    } else {
+        console.log("#38 PASSED - returns false when the interval annotation is zero");
+    }
+}
+
+function test_case39() {
+    var event = {
+      "entity": {
+        "namespace": "default",
+        "annotations": {
+          "fatigue_check/keepalive_interval": 0
+        }
+      },
+      "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+      },
+      "is_resolution": false
+    }
+    var result = fatigue_check(event, 3, 60, 1, 60);
+    if (result) {
+        console.log("#39 FAILED - returns false when the keepalive interval annotation is zero");
+    } else {
+        console.log("#39 PASSED - returns false when the keepalive interval annotation is zero");
+    }
+}
 test_case1();
 test_case2();
 test_case3();
@@ -870,4 +916,6 @@ test_case34();
 test_case35();
 test_case36();
 test_case37();
+test_case38();
+test_case39();
 

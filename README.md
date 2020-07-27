@@ -18,6 +18,7 @@
     - [Keepalives](#keepalives)
     - [Annotations](#annotations)
     - [Arguments](#arguments)
+    - [Non-repeating alerts](#non-repeating-alerts)
 - [Installation from source](#installation-from-source)
 - [Additional notes](#additional-notes)
 - [Contributing](#contributing)
@@ -196,7 +197,8 @@ entity annotations to override the defaults on a per entity basis.
 The Fatigue Check Filter makes use of four annotations within the check and/or
 entity metadata for normal checks with an additional two keepalive annotations
 availalbe in the entity metadata.  The entity annotations taking precedence over
-check annotations.
+check annotations.  All annotations take precedence of the `fatigue_check()`
+function arguments and defaults.
 
 |Annotation|Default|Usage|
 |----------|-------|-----|
@@ -295,6 +297,13 @@ spec:
   runtime_assets:
   - fatigue-check-filter
 ```
+
+#### Non-repeating alerts
+
+If you need to have alerts which will not repeat, meaning the alert is only ever
+sent on the first occurrence and none after (aside from the resolution, if
+`allow_resolution` is true, which is the default), then you will need to set the
+`interval` (or `keepalive_interval`) to zero (0) via an annotation.
 
 ## Installation from source
 

@@ -642,4 +642,41 @@ describe("fatigue_check", function() {
       expect(fatigue_check(event, 2, 600, 3, 300)).toBe(false);
   });
 
+  it("returns false when the interval annotation is zero", function() {
+      var event = {
+        "entity": {
+          "namespace": "default",
+	  "annotations": {
+            "fatigue_check/interval": 0
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 1, 1800)).toBe(false);
+  });
+
+  it("returns false when the keepalive interval annotation is zero", function() {
+      var event = {
+        "entity": {
+          "namespace": "default",
+	  "annotations": {
+            "fatigue_check/keepalive_interval": 0
+          }
+        },
+        "check": {
+          "interval": 30,
+          "occurrences": 2,
+          "occurrences_watermark": 2,
+          "name": "keepalive"
+        },
+        "is_resolution": false
+      }
+      expect(fatigue_check(event, 3, 60, 1, 60)).toBe(false);
+  });
+
 });
