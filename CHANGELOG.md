@@ -7,11 +7,15 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.0] - 2020-07-27
+
 ### Added
 - Special case handling for keepalive checks
+- Test cases for zero interval
 
 ### Changed
 - Reformatted and cleaned up README
+- Added information on non-repeating alerts to README
 
 ## [0.6.2] - 2020-05-10
 
