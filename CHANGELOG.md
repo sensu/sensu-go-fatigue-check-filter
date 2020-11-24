@@ -7,6 +7,8 @@ Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.8.0] - 2020-11-24
+
 ### Added
 - Support for interval checking with cron scheduled checks
 
