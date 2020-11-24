@@ -679,4 +679,78 @@ describe("fatigue_check", function() {
       expect(fatigue_check(event, 3, 60, 1, 60)).toBe(false);
   });
 
+  it("returns true when the cron scheduler interval is met", function() {
+      var event = {
+        "entity": {
+          "namespace": "default",
+        },
+        "check": {
+          "cron": "*/5 * * * *",
+          "interval": 0,
+          "occurrences": 3,
+          "occurrences_watermark": 3,
+          "history": [
+              {
+                "status": 0,
+                "executed": 1606224000
+              },
+              {
+                "status": 2,
+                "executed": 1606224300
+              },
+              {
+                "status": 2,
+                "executed": 1606224600
+              },
+              {
+                "status": 2,
+                "executed": 1606224900
+              }
+          ]
+        },
+        "is_resolution": false,
+        "timestamp": 1606224900
+      }
+      expect(fatigue_check(event, 1, 900)).toBe(true);
+  });
+
+  it("returns false when the cron scheduler interval is met", function() {
+      var event = {
+        "entity": {
+          "namespace": "default",
+        },
+        "check": {
+          "cron": "*/5 * * * *",
+          "interval": 0,
+          "occurrences": 4,
+          "occurrences_watermark": 4,
+          "history": [
+              {
+                "status": 0,
+                "executed": 1606224000
+              },
+              {
+                "status": 2,
+                "executed": 1606224300
+              },
+              {
+                "status": 2,
+                "executed": 1606224600
+              },
+              {
+                "status": 2,
+                "executed": 1606224900
+              },
+              {
+                "status": 2,
+                "executed": 1606225200
+              }
+          ]
+        },
+        "is_resolution": false,
+        "timestamp": 1606225200
+      }
+      expect(fatigue_check(event, 1, 900)).toBe(false);
+  });
+
 });

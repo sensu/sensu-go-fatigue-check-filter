@@ -16,6 +16,7 @@
     - [Check definition](#check-definition)
     - [Entity definition](#entity-definition)
     - [Keepalives](#keepalives)
+    - [Cron scheduled checks](#cron-scheduled-checks)
     - [Annotations](#annotations)
     - [Arguments](#arguments)
     - [Non-repeating alerts](#non-repeating-alerts)
@@ -192,6 +193,15 @@ this filter.  Using standard entity annotations would override the settings for
 exist for customizing this filter for keepalive events.  These can be set as
 arguments to the `fatigue_check()` function in the filter definition or as
 entity annotations to override the defaults on a per entity basis.
+
+#### Cron scheduled checks
+Since cron scheduled checks do not provide an explicit interval, this filter
+has to compute the apparent interval using the history available in the event.
+In order for this to work, there has to be at least two entries in the event's
+check history.  The only time there would be less than two history entries is
+during the first two check executions.  By default this should not be an issue,
+but in the unlikely case the interval is set this low, a default interval of 60
+seconds is used.
 
 #### Annotations
 The Fatigue Check Filter makes use of four annotations within the check and/or

@@ -18,9 +18,9 @@ function test_case1() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("# 1 PASSED - returns true when no annotations and default(s) met");
+        console.log("# 1 PASSED ✅  - returns true when no annotations and default(s) met");
     } else {
-        console.log("# 1 FAILED - returns true when no annotations and default(s) met");
+        console.log("# 1 FAILED 🛑  - returns true when no annotations and default(s) met");
     }
 }
 
@@ -37,9 +37,9 @@ function test_case2() {
     }
     var result = fatigue_check(event, 2);
     if (result) {
-        console.log("# 2 PASSED - returns true when no annotations and occurrences argument matched");
+        console.log("# 2 PASSED ✅  - returns true when no annotations and occurrences argument matched");
     } else {
-        console.log("# 2 FAILED - returns true when no annotations and occurrences argument matched");
+        console.log("# 2 FAILED 🛑  - returns true when no annotations and occurrences argument matched");
     }
 }
 
@@ -56,9 +56,9 @@ function test_case3() {
     }
     var result = fatigue_check(event, 2);
     if (! result) {
-        console.log("# 3 PASSED - returns false when no annotations and occurrences argument not matched");
+        console.log("# 3 PASSED ✅  - returns false when no annotations and occurrences argument not matched");
     } else {
-        console.log("# 3 FAILED - returns false when no annotations and occurrences argument not matched");
+        console.log("# 3 FAILED 🛑  - returns false when no annotations and occurrences argument not matched");
     }
 }
 
@@ -76,9 +76,9 @@ function test_case4() {
     }
     var result = fatigue_check(event, 2, 300);
     if  (result) {
-        console.log("# 4 PASSED - returns true when no annotations and interval argument matched");
+        console.log("# 4 PASSED ✅  - returns true when no annotations and interval argument matched");
     } else {
-        console.log("# 4 FAILED - returns true when no annotations and interval argument matched");
+        console.log("# 4 FAILED 🛑  - returns true when no annotations and interval argument matched");
     }
 }
 
@@ -97,9 +97,9 @@ function test_case5() {
     }
     var result = fatigue_check(event, 2, 300);
     if (! result) {
-        console.log("# 5 PASSED - returns false when no annotations and interval argument not matched");
+        console.log("# 5 PASSED ✅  - returns false when no annotations and interval argument not matched");
     } else {
-        console.log("# 5 FAILED - returns false when no annotations and interval argument not matched");
+        console.log("# 5 FAILED 🛑  - returns false when no annotations and interval argument not matched");
     }
 }
 
@@ -119,9 +119,9 @@ function test_case6() {
     }
     var result = fatigue_check(event);
       if (! result) {
-          console.log("# 6 PASSED - returns false when is_resolution is true and check/allow_resolution is false");
+          console.log("# 6 PASSED ✅  - returns false when is_resolution is true and check/allow_resolution is false");
       } else {
-          console.log("# 6 FAILED - returns false when is_resolution is true and check/allow_resolution is false");
+          console.log("# 6 FAILED 🛑  - returns false when is_resolution is true and check/allow_resolution is false");
       }
 }
 
@@ -141,9 +141,9 @@ function test_case7() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("# 7 PASSED - returns true when is_resolution is true and check/allow_resolution is true");
+        console.log("# 7 PASSED ✅  - returns true when is_resolution is true and check/allow_resolution is true");
     } else {
-        console.log("# 7 FAILED - returns true when is_resolution is true and check/allow_resolution is true");
+        console.log("# 7 FAILED 🛑  - returns true when is_resolution is true and check/allow_resolution is true");
     }
 }
 
@@ -164,9 +164,9 @@ function test_case8() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("# 8 PASSED - returns false when is_resolution is true and check/allow_resolution is true, but insufficient occurrences");
+        console.log("# 8 PASSED ✅  - returns false when is_resolution is true and check/allow_resolution is true, but insufficient occurrences");
     } else {
-        console.log("# 8 FAILED - returns false when is_resolution is true and check/allow_resolution is true, but insufficient occurrences");
+        console.log("# 8 FAILED 🛑  - returns false when is_resolution is true and check/allow_resolution is true, but insufficient occurrences");
     }
 }
 
@@ -188,9 +188,9 @@ function test_case9() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("# 9 PASSED - returns true when the check/interval is matched");
+        console.log("# 9 PASSED ✅  - returns true when the check/interval is matched");
     } else {
-        console.log("# 9 FAILED - returns true when the check/interval is matched");
+        console.log("# 9 FAILED 🛑  - returns true when the check/interval is matched");
     }
 }
 
@@ -212,9 +212,9 @@ function test_case10() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#10 PASSED - returns false when the check/interval is not matched");
+        console.log("#10 PASSED ✅  - returns false when the check/interval is not matched");
     } else {
-        console.log("#10 FAILED - returns false when the check/interval is not matched");
+        console.log("#10 FAILED 🛑  - returns false when the check/interval is not matched");
     }
 }
 
@@ -236,9 +236,9 @@ function test_case11() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#11 PASSED - returns true when the non-multiple check/interval is matched");
+        console.log("#11 PASSED ✅  - returns true when the non-multiple check/interval is matched");
     } else {
-        console.log("#11 FAILED - returns true when the non-multiple check/interval is matched");
+        console.log("#11 FAILED 🛑  - returns true when the non-multiple check/interval is matched");
     }
 }
 
@@ -260,9 +260,9 @@ function test_case12() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#12 PASSED - returns false when the non-multiple check/interval is not matched");
+        console.log("#12 PASSED ✅  - returns false when the non-multiple check/interval is not matched");
     } else {
-        console.log("#12 FAILED - returns false when the non-multiple check/interval is not matched");
+        console.log("#12 FAILED 🛑  - returns false when the non-multiple check/interval is not matched");
     }
 }
 
@@ -283,9 +283,9 @@ function test_case13() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#13 PASSED - returns true when the check/occurrences is matched");
+        console.log("#13 PASSED ✅  - returns true when the check/occurrences is matched");
     } else {
-        console.log("#13 FAILED - returns true when the check/occurrences is matched");
+        console.log("#13 FAILED 🛑  - returns true when the check/occurrences is matched");
     }
 }
 
@@ -306,9 +306,9 @@ function test_case14() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#14 PASSED - returns false when the check/occurrences is not matched");
+        console.log("#14 PASSED ✅  - returns false when the check/occurrences is not matched");
     } else {
-        console.log("#14 FAILED - returns false when the check/occurrences is not matched");
+        console.log("#14 FAILED 🛑  - returns false when the check/occurrences is not matched");
     }
 }
 
@@ -330,9 +330,9 @@ function test_case15() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#15 PASSED - returns true when the check/suppress_flapping is false");
+        console.log("#15 PASSED ✅  - returns true when the check/suppress_flapping is false");
     } else {
-        console.log("#15 FAILED - returns true when the check/suppress_flapping is false");
+        console.log("#15 FAILED 🛑  - returns true when the check/suppress_flapping is false");
     }
 }
 
@@ -354,9 +354,9 @@ function test_case16() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#16 PASSED - returns false when the check/suppress_flapping is true");
+        console.log("#16 PASSED ✅  - returns false when the check/suppress_flapping is true");
     } else {
-        console.log("#16 FAILED - returns false when the check/suppress_flapping is true");
+        console.log("#16 FAILED 🛑  - returns false when the check/suppress_flapping is true");
     }
 }
 
@@ -375,9 +375,9 @@ function test_case17() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#17 PASSED - returns false when is_resolution is true and entity/allow_resolution is false");
+        console.log("#17 PASSED ✅  - returns false when is_resolution is true and entity/allow_resolution is false");
     } else {
-        console.log("#17 FAILED - returns false when is_resolution is true and entity/allow_resolution is false");
+        console.log("#17 FAILED 🛑  - returns false when is_resolution is true and entity/allow_resolution is false");
     }
 }
 
@@ -396,9 +396,9 @@ function test_case18() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#18 PASSED - returns true when is_resolution is true and entity/allow_resolution is true");
+        console.log("#18 PASSED ✅  - returns true when is_resolution is true and entity/allow_resolution is true");
     } else {
-        console.log("#18 FAILED - returns true when is_resolution is true and entity/allow_resolution is true");
+        console.log("#18 FAILED 🛑  - returns true when is_resolution is true and entity/allow_resolution is true");
     }
 }
 
@@ -418,9 +418,9 @@ function test_case19() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#19 PASSED - returns false when is_resolution is true and entity/allow_resolution is true, but insufficient occurrences");
+        console.log("#19 PASSED ✅  - returns false when is_resolution is true and entity/allow_resolution is true, but insufficient occurrences");
     } else {
-        console.log("#19 FAILED - returns false when is_resolution is true and entity/allow_resolution is true, but insufficient occurrences");
+        console.log("#19 FAILED 🛑  - returns false when is_resolution is true and entity/allow_resolution is true, but insufficient occurrences");
     }
 }
 
@@ -441,9 +441,9 @@ function test_case20() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#20 PASSED - returns true when the entity/interval is matched");
+        console.log("#20 PASSED ✅  - returns true when the entity/interval is matched");
     } else {
-        console.log("#20 FAILED - returns true when the entity/interval is matched");
+        console.log("#20 FAILED 🛑  - returns true when the entity/interval is matched");
     }
 }
 
@@ -464,9 +464,9 @@ function test_case21() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#21 PASSED - returns false when the entity/interval is not matched");
+        console.log("#21 PASSED ✅  - returns false when the entity/interval is not matched");
     } else {
-        console.log("#21 FAILED - returns false when the entity/interval is not matched");
+        console.log("#21 FAILED 🛑  - returns false when the entity/interval is not matched");
     }
 }
 
@@ -487,9 +487,9 @@ function test_case22() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#22 PASSED - returns true when the non-multiple entity/interval is matched");
+        console.log("#22 PASSED ✅  - returns true when the non-multiple entity/interval is matched");
     } else {
-        console.log("#22 FAILED - returns true when the non-multiple entity/interval is matched");
+        console.log("#22 FAILED 🛑  - returns true when the non-multiple entity/interval is matched");
     }
 }
 
@@ -510,9 +510,9 @@ function test_case23() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#23 PASSED - returns false when the non-multiple entity/interval is not matched");
+        console.log("#23 PASSED ✅  - returns false when the non-multiple entity/interval is not matched");
     } else {
-        console.log("#23 FAILED - returns false when the non-multiple entity/interval is not matched");
+        console.log("#23 FAILED 🛑  - returns false when the non-multiple entity/interval is not matched");
     }
 }
 
@@ -532,9 +532,9 @@ function test_case24() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#24 PASSED - returns true when the entity/occurrences is matched");
+        console.log("#24 PASSED ✅  - returns true when the entity/occurrences is matched");
     } else {
-        console.log("#24 FAILED - returns true when the entity/occurrences is matched");
+        console.log("#24 FAILED 🛑  - returns true when the entity/occurrences is matched");
     }
 }
 
@@ -554,9 +554,9 @@ function test_case25() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#25 PASSED - returns false when the entity/occurrences is not matched");
+        console.log("#25 PASSED ✅  - returns false when the entity/occurrences is not matched");
     } else {
-        console.log("#25 FAILED - returns false when the entity/occurrences is not matched");
+        console.log("#25 FAILED 🛑  - returns false when the entity/occurrences is not matched");
     }
 }
 
@@ -577,9 +577,9 @@ function test_case26() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#26 PASSED - returns true when the entity/suppress_flapping is false");
+        console.log("#26 PASSED ✅  - returns true when the entity/suppress_flapping is false");
     } else {
-        console.log("#26 FAILED - returns true when the entity/suppress_flapping is false");
+        console.log("#26 FAILED 🛑  - returns true when the entity/suppress_flapping is false");
     }
 }
 
@@ -600,9 +600,9 @@ function test_case27() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#27 PASSED - returns false when the entity/suppress_flapping is true");
+        console.log("#27 PASSED ✅  - returns false when the entity/suppress_flapping is true");
     } else {
-        console.log("#27 FAILED - returns false when the entity/suppress_flapping is true");
+        console.log("#27 FAILED 🛑  - returns false when the entity/suppress_flapping is true");
     }
 }
 
@@ -625,9 +625,9 @@ function test_case28() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#28 PASSED - returns true when the entity/occurrences is matched, taking precedence over non-matching check/occurrences");
+        console.log("#28 PASSED ✅  - returns true when the entity/occurrences is matched, taking precedence over non-matching check/occurrences");
     } else {
-        console.log("#28 FAILED - returns true when the entity/occurrences is matched, taking precedence over non-matching check/occurrences");
+        console.log("#28 FAILED 🛑  - returns true when the entity/occurrences is matched, taking precedence over non-matching check/occurrences");
     }
 }
 
@@ -650,9 +650,9 @@ function test_case29() {
     }
     var result = fatigue_check(event);
     if (! result) {
-        console.log("#29 PASSED - returns false when the entity/occurrences is not matched, taking precedence over matching check/occurrences");
+        console.log("#29 PASSED ✅  - returns false when the entity/occurrences is not matched, taking precedence over matching check/occurrences");
     } else {
-        console.log("#29 FAILED - returns false when the entity/occurrences is not matched, taking precedence over matching check/occurrences");
+        console.log("#29 FAILED 🛑  - returns false when the entity/occurrences is not matched, taking precedence over matching check/occurrences");
     }
 }
 
@@ -673,9 +673,9 @@ function test_case30() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#30 PASSED - returns true when the entity/keepalive_occurrences is matched for a keepalive");
+        console.log("#30 PASSED ✅  - returns true when the entity/keepalive_occurrences is matched for a keepalive");
     } else {
-        console.log("#30 FAILED - returns true when the entity/keepalive_occurrences is matched for a keepalive");
+        console.log("#30 FAILED 🛑  - returns true when the entity/keepalive_occurrences is matched for a keepalive");
     }
 }
 
@@ -696,9 +696,9 @@ function test_case31() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#30 FAILED - returns false when the entity/keepalive_occurrences is not matched for a keepalive");
+        console.log("#30 FAILED 🛑  - returns false when the entity/keepalive_occurrences is not matched for a keepalive");
     } else {
-        console.log("#30 PASSED - returns false when the entity/keepalive_occurrences is not matched for a keepalive");
+        console.log("#30 PASSED ✅  - returns false when the entity/keepalive_occurrences is not matched for a keepalive");
     }
 }
 
@@ -720,9 +720,9 @@ function test_case32() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#32 PASSED - returns true when the entity/keepalive_interval is matched for a keepalive");
+        console.log("#32 PASSED ✅  - returns true when the entity/keepalive_interval is matched for a keepalive");
     } else {
-        console.log("#32 FAILED - returns true when the entity/keepalive_interval is matched for a keepalive");
+        console.log("#32 FAILED 🛑  - returns true when the entity/keepalive_interval is matched for a keepalive");
     }
 }
 
@@ -744,9 +744,9 @@ function test_case33() {
     }
     var result = fatigue_check(event);
     if (result) {
-        console.log("#33 FAILED - returns false when the entity/keepalive_interval is not matched for a keepalive");
+        console.log("#33 FAILED 🛑  - returns false when the entity/keepalive_interval is not matched for a keepalive");
     } else {
-        console.log("#33 PASSED - returns false when the entity/keepalive_interval is not matched for a keepalive");
+        console.log("#33 PASSED ✅  - returns false when the entity/keepalive_interval is not matched for a keepalive");
     }
 }
 
@@ -765,9 +765,9 @@ function test_case34() {
     }
     var result = fatigue_check(event, 3, 600, 2, 300);
     if (result) {
-        console.log("#34 PASSED - returns true when the keepalive_occurrences argument is matched for a keepalive");
+        console.log("#34 PASSED ✅  - returns true when the keepalive_occurrences argument is matched for a keepalive");
     } else {
-        console.log("#34 FAILED - returns true when the keepalive_occurrences argument is matched for a keepalive");
+        console.log("#34 FAILED 🛑  - returns true when the keepalive_occurrences argument is matched for a keepalive");
     }
 }
 
@@ -786,9 +786,9 @@ function test_case35() {
     }
     var result = fatigue_check(event, 2, 600, 3, 300);
     if (result) {
-        console.log("#35 FAILED - returns false when the keepalive_occurrences argument is not matched for a keepalive");
+        console.log("#35 FAILED 🛑  - returns false when the keepalive_occurrences argument is not matched for a keepalive");
     } else {
-        console.log("#35 PASSED - returns false when the keepalive_occurrences argument is not matched for a keepalive");
+        console.log("#35 PASSED ✅  - returns false when the keepalive_occurrences argument is not matched for a keepalive");
     }
 }
 
@@ -807,9 +807,9 @@ function test_case36() {
     }
     var result = fatigue_check(event, 2, 300, 3, 600);
     if (result) {
-        console.log("#36 PASSED - returns true when the keepalive_interval argument is matched for a keepalive");
+        console.log("#36 PASSED ✅  - returns true when the keepalive_interval argument is matched for a keepalive");
     } else {
-        console.log("#36 FAILED - returns true when the keepalive_interval argument is matched for a keepalive");
+        console.log("#36 FAILED 🛑  - returns true when the keepalive_interval argument is matched for a keepalive");
     }
 }
 
@@ -828,9 +828,9 @@ function test_case37() {
     }
     var result = fatigue_check(event, 2, 600, 3, 300);
     if (result) {
-        console.log("#37 FAILED - returns false when the keepalive_interval argument is not matched for a keepalive");
+        console.log("#37 FAILED 🛑  - returns false when the keepalive_interval argument is not matched for a keepalive");
     } else {
-        console.log("#37 PASSED - returns false when the keepalive_interval argument is not matched for a keepalive");
+        console.log("#37 PASSED ✅  - returns false when the keepalive_interval argument is not matched for a keepalive");
     }
 }
 
@@ -851,9 +851,9 @@ function test_case38() {
     }
     var result = fatigue_check(event, 1, 1800);
     if (result) {
-        console.log("#38 FAILED - returns false when the interval annotation is zero");
+        console.log("#38 FAILED 🛑  - returns false when the interval annotation is zero");
     } else {
-        console.log("#38 PASSED - returns false when the interval annotation is zero");
+        console.log("#38 PASSED ✅  - returns false when the interval annotation is zero");
     }
 }
 
@@ -874,11 +874,96 @@ function test_case39() {
     }
     var result = fatigue_check(event, 3, 60, 1, 60);
     if (result) {
-        console.log("#39 FAILED - returns false when the keepalive interval annotation is zero");
+        console.log("#39 FAILED 🛑  - returns false when the keepalive interval annotation is zero");
     } else {
-        console.log("#39 PASSED - returns false when the keepalive interval annotation is zero");
+        console.log("#39 PASSED ✅  - returns false when the keepalive interval annotation is zero");
     }
 }
+
+function test_case40() {
+    var event = {
+      "entity": {
+        "namespace": "default",
+      },
+      "check": {
+          "cron": "*/5 * * * *",
+	  "interval": 0,
+          "occurrences": 3,
+          "occurrences_watermark": 3,
+          "history": [
+              {
+                "status": 0,
+                "executed": 1606224000
+              },
+              {
+                "status": 2,
+                "executed": 1606224300
+              },
+              {
+                "status": 2,
+                "executed": 1606224600
+              },
+              {
+                "status": 2,
+                "executed": 1606224900
+              }
+          ]
+      },
+      "is_resolution": false
+      "timestamp": 1606224900
+    }
+    var result = fatigue_check(event, 1, 900);
+    if (result) {
+        console.log("#41 PASSED ✅  - returns true when cron scheduler interval met");
+    } else {
+        console.log("#41 FAILED 🛑  - returns true when cron scheduler interval met");
+    }
+}
+
+function test_case41() {
+    var event = {
+      "entity": {
+        "namespace": "default",
+      },
+      "check": {
+          "cron": "*/5 * * * *",
+	  "interval": 0,
+          "occurrences": 4,
+          "occurrences_watermark": 4,
+          "history": [
+              {
+                "status": 0,
+                "executed": 1606224000
+              },
+              {
+                "status": 2,
+                "executed": 1606224300
+              },
+              {
+                "status": 2,
+                "executed": 1606224600
+              },
+              {
+                "status": 2,
+                "executed": 1606224900
+              },
+              {
+                "status": 2,
+                "executed": 1606225200
+              }
+          ]
+      },
+      "is_resolution": false
+      "timestamp": 1606225200
+    }
+    var result = fatigue_check(event, 1, 900);
+    if (result) {
+        console.log("#40 FAILED 🛑  - returns false when cron scheduler interval not met");
+    } else {
+        console.log("#40 PASSED ✅  - returns false when cron scheduler interval not met");
+    }
+}
+
 test_case1();
 test_case2();
 test_case3();
@@ -918,4 +1003,6 @@ test_case36();
 test_case37();
 test_case38();
 test_case39();
+test_case40();
+test_case41();
 
