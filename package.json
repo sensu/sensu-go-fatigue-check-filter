@@ -3,7 +3,7 @@
     "version": "0.3.1",
     "description": "Filter Sensu Go Events with an eye toward managing alert fatigue",
     "main": "lib/fatigue_check.js",
-    "repository": "git@github.com:nixwiz/sensu-go-fatigue-check-filter.git",
+    "repository": "git@github.com:sensu/sensu-go-fatigue-check-filter.git",
     "author": "Todd Campbell <todd@toddcampbell.net>",
     "license": "MIT",
     "directories": {

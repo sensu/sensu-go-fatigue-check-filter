@@ -1,7 +1,7 @@
-[![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/nixwiz/sensu-go-fatigue-check-filter)
-![Karma Test](https://github.com/nixwiz/sensu-go-fatigue-check-filter/workflows/Karma%20Test/badge.svg)
-![Otto Test](https://github.com/nixwiz/sensu-go-fatigue-check-filter/workflows/Otto%20Test/badge.svg)
-![release](https://github.com/nixwiz/sensu-go-fatigue-check-filter/workflows/release/badge.svg)
+[![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/sensu/sensu-go-fatigue-check-filter)
+![Karma Test](https://github.com/sensu/sensu-go-fatigue-check-filter/workflows/Karma%20Test/badge.svg)
+![Otto Test](https://github.com/sensu/sensu-go-fatigue-check-filter/workflows/Otto%20Test/badge.svg)
+![release](https://github.com/sensu/sensu-go-fatigue-check-filter/workflows/release/badge.svg)
 
 ## Sensu Go Fatigue Check Filter
 
@@ -71,7 +71,7 @@ Assets are the best way to make use of this plugin. If you're not using an
 asset, please consider doing so! If you're using sensuctl 5.13 or later, you
 can use the following command to add the asset: 
 
-`sensuctl asset add nixwiz/sensu-go-fatigue-check-filter --rename fatigue-check-filter`
+`sensuctl asset add sensu/sensu-go-fatigue-check-filter --rename fatigue-check-filter`
 
 Note that the `--rename` is not necessary, but references to the runtime asset
 in the filter definition as in the example below would need to be updated to
@@ -341,5 +341,5 @@ Please submit an [issue][8] if you have problems or suggestions.
 [4]: https://bonsai.sensu.io/
 [5]: https://docs.sensu.io/sensu-core/latest/installation/installing-plugins/
 [6]: #asset-registration
-[7]: https://bonsai.sensu.io/assets/nixwiz/sensu-go-fatigue-check-filter
-[8]: https://github.com/nixwiz/sensu-go-fatigue-check-filter/issues
+[7]: https://bonsai.sensu.io/assets/sensu/sensu-go-fatigue-check-filter
+[8]: https://github.com/sensu/sensu-go-fatigue-check-filter/issues
